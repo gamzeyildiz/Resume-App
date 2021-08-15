@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,6 +25,21 @@ namespace ResumeApp.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
+            services.AddMvc().AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+            services.Configure<RequestLocalizationOptions>(
+                opt =>
+                {
+                    var supportedCultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("en"),
+                        new CultureInfo("tr")
+                    };
+                    opt.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
+                    opt.SupportedCultures = supportedCultures;
+                    opt.SupportedUICultures = supportedCultures;
+                });
             services.AddControllersWithViews();
         }
 
@@ -46,6 +63,14 @@ namespace ResumeApp.UI
 
             app.UseAuthorization();
 
+            app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+
+            //var supportedLanguage = new[] { "tr", "en" };
+            //var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedLanguage[0])
+            //    .AddSupportedCultures(supportedLanguage)
+            //    .AddSupportedUICultures(supportedLanguage);
+
+            //app.UseRequestLocalization(localizationOptions);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
