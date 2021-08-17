@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResumeApp.Business.Abstract
 {
-    interface ICertificateService
+    public interface ICertificateService
     {
         List<Certificate> GetAllCertificates();
         Certificate GetCertificateById(int id);
