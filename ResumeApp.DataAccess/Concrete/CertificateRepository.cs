@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ResumeApp.DataAccess.Concrete
 {
-    class CertificateRepository : ICertificateRepository
+    public class CertificateRepository : ICertificateRepository
     {
         public Certificate CreateCertificate(Certificate certificate)
         {

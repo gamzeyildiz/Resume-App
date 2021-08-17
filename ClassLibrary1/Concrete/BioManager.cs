@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ResumeApp.Business.Concrete
 {
-    class BioManager : IBioService
+    public class BioManager : IBioService
     {
         private  IBioRepository _bioRepository;
 

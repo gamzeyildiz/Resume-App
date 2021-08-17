@@ -14,6 +14,7 @@ namespace ResumeApp.API.Controllers
     public class ResumeController : ControllerBase
     {
         private IResumeService _resumeService;
+
         public ResumeController(IResumeService resumeService)
         {
             _resumeService = resumeService;

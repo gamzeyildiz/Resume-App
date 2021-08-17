@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ResumeApp.Business.Concrete
 {
-    class ProjectManager : IProjectService
+    public class ProjectManager : IProjectService
     {
         private IProjectRepository _projectRepository;
 

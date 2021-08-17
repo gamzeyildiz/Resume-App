@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ResumeApp.DataAccess.Concrete
 {
-    class ExperienceRepository : IExperienceRepository
+    public class ExperienceRepository : IExperienceRepository
     {
         public Experience CreateExperience(Experience experience)
         {
