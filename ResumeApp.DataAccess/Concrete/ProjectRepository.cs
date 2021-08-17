@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ResumeApp.DataAccess.Concrete
 {
-    class ProjectRepository : IProjectRepository
+    public class ProjectRepository : IProjectRepository
     {
         public Project CreateProject(Project project)
         {

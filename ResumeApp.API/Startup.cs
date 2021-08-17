@@ -7,7 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ResumeApp.Business.Abstract;
+using ResumeApp.Business.Concrete;
 using ResumeApp.DataAccess;
+using ResumeApp.DataAccess.Abstact;
+using ResumeApp.DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +36,16 @@ namespace ResumeApp.API
                     Configuration["DefaultConnection:ConnectionString"]
                 ));
             services.AddControllers();
+            services.AddSingleton<IBioService, BioManager>();
+            services.AddSingleton<ICertificateService, CertificateManager>();
+            services.AddSingleton<IExperienceService, ExperienceManager>();
+            services.AddSingleton<IProjectService, ProjectManager>();
+            services.AddSingleton<IResumeService, ResumeManager>();
+            services.AddSingleton<IBioRepository, BioRepository>();
+            services.AddSingleton<ICertificateRepository, CertificateRepository>();
+            services.AddSingleton<IExperienceRepository, ExperienceRepository>();
+            services.AddSingleton<IProjectRepository, ProjectRepository>();
+            services.AddSingleton<IResumeRepository, ResumeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

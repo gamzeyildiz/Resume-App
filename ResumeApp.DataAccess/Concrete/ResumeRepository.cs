@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ResumeApp.DataAccess.Concrete
 {
-    class ResumeRepository : IResumeRepository
+    public class ResumeRepository : IResumeRepository
     {
         public Resume CreateResume(Resume resume)
         {

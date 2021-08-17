@@ -19,10 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ResumeApp.Business.csproj" />
     <ProjectReference Include="..\ResumeApp.DataAccess\ResumeApp.DataAccess.csproj" />
   </ItemGroup>
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ResumeApp.Business.Concrete
 {
-    class ExperienceManager : IExperienceService
+    public class ExperienceManager : IExperienceService
     {
         private IExperienceRepository _experienceRepository;
 
