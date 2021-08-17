@@ -12,6 +12,7 @@ using ResumeApp.Business.Concrete;
 using ResumeApp.DataAccess;
 using ResumeApp.DataAccess.Abstact;
 using ResumeApp.DataAccess.Concrete;
+using Serilog.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,7 @@ namespace ResumeApp.API
             services.AddSingleton<IExperienceRepository, ExperienceRepository>();
             services.AddSingleton<IProjectRepository, ProjectRepository>();
             services.AddSingleton<IResumeRepository, ResumeRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +63,16 @@ namespace ResumeApp.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //middleware
+            app.Use(async (httpContext, next) =>
+            {
+                var username = httpContext.User.Identity.IsAuthenticated ? httpContext.User.Identity.Name : "anonymous";
+
+                LogContext.PushProperty("UserName", username);
+
+                await next.Invoke();
+            });
 
             app.UseEndpoints(endpoints =>
             {
