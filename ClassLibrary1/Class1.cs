@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ResumeApp.DataAccess
+namespace ClassLibrary1
 {
     public class Class1
     {
     }
-}  
+}

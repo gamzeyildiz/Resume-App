@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApp.API", "ResumeApp.API\ResumeApp.API.csproj", "{7F8DFEAB-B54D-4C11-AFFD-5AC85CBE6F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResumeApp.API", "ResumeApp.API\ResumeApp.API.csproj", "{7F8DFEAB-B54D-4C11-AFFD-5AC85CBE6F23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApp.Entities", "ResumeApp.Entities\ResumeApp.Entities.csproj", "{2ACA925B-B827-49E0-98C8-E4BE3762F556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResumeApp.Entities", "ResumeApp.Entities\ResumeApp.Entities.csproj", "{2ACA925B-B827-49E0-98C8-E4BE3762F556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApp.UI", "ResumeApp.UI\ResumeApp.UI.csproj", "{54DCE0EF-969F-4F25-B159-4F615DEA14EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResumeApp.UI", "ResumeApp.UI\ResumeApp.UI.csproj", "{54DCE0EF-969F-4F25-B159-4F615DEA14EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApp.DataAccess", "ResumeApp.DataAccess\ResumeApp.DataAccess.csproj", "{621B699E-8C3A-4452-B5D0-C679C948DACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResumeApp.DataAccess", "ResumeApp.DataAccess\ResumeApp.DataAccess.csproj", "{621B699E-8C3A-4452-B5D0-C679C948DACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApp.Business", "ClassLibrary1\ResumeApp.Business.csproj", "{3E646B39-853C-4D54-8CA8-2294BA192441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{621B699E-8C3A-4452-B5D0-C679C948DACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{621B699E-8C3A-4452-B5D0-C679C948DACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{621B699E-8C3A-4452-B5D0-C679C948DACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E646B39-853C-4D54-8CA8-2294BA192441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E646B39-853C-4D54-8CA8-2294BA192441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E646B39-853C-4D54-8CA8-2294BA192441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E646B39-853C-4D54-8CA8-2294BA192441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
