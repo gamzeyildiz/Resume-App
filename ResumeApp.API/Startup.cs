@@ -37,7 +37,7 @@ namespace ResumeApp.API
                 ));
             services.AddControllers();
             services.AddSingleton<IBioService, BioManager>();
-            services.AddSingleton<ICertificateServie, CertificateManager>();
+            services.AddSingleton<ICertificateService, CertificateManager>();
             services.AddSingleton<IExperienceService, ExperienceManager>();
             services.AddSingleton<IProjectService, ProjectManager>();
             services.AddSingleton<IResumeService, ResumeManager>();

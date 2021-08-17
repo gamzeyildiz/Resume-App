@@ -16,4 +16,4 @@ namespace ResumeApp.Business.Abstract
         void DeleteCertificate(int id);
     }
 }
-}
+
