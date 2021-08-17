@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.Extensions.Logging;
+using ResumeApp.DataAccess;
 using ResumeApp.UI.Models;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,16 @@ namespace ResumeApp.UI.Controllers
             _logger = logger;
             _localizer = localizer;
         }
-
+        
         public IActionResult Index()
         {
+            ResumeDbContext dbContext = new ResumeDbContext();
+            IndexModel myModel = new IndexModel(dbContext);
+            myModel.onGet();
             ViewData["About"] = _localizer["About"];
             ViewData["Skills"] = _localizer["Skills"];
             ViewData["Experience"] = _localizer["Experience"];
-            ViewData["Education"] = _localizer["Education"];
+            ViewData["Certificates"] = _localizer["Certificates"];
             ViewData["Portfolio"] = _localizer["Portfolio"];
             ViewData["References"] = _localizer["References"];
             ViewData["Contact"] = _localizer["Contact"];
@@ -48,7 +52,7 @@ namespace ResumeApp.UI.Controllers
             ViewData["Email address"] = _localizer["Email address"];
             ViewData["Message"] = _localizer["Message"];
 
-            return View();
+            return View(myModel);
         }
 
         public IActionResult Privacy()
